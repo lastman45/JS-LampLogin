@@ -1,0 +1,266 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #1a1a1a;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	font-family: Arial, sans-serif;
+	user-select: none; /* Preventing text selection for better UX */
+	overflow: hidden;
+	transition: background-color 0.6s ease;
+}
+
+.container {
+	text-align: center;
+	padding: 20px;
+}
+
+.title {
+	color: #d4af37;
+	font-size: 3rem;
+	margin-bottom: 40px;
+	font-weight: 500;
+	letter-spacing: 2px;
+}
+
+/* Container for the lamp and login form */
+.content-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 80px;
+	margin-bottom: 40px;
+}
+
+/* Container specifically for the lamp illustration */
+.lamp-container {
+	position: relative;
+	width: 200px;
+	height: 300px;
+}
+
+/* Styling the lamp shade (top part) */
+.lamp-shade {
+	/* Setting background to cream/white color */
+	background-color: #f5f5dc;
+	/* Making it rounded at top */
+	border-radius: 50% 50% 0 0;
+	width: 150px;
+	height: 80px;
+	margin: 0 auto;
+	/* Relative positioning for glow effect */
+	position: relative;
+	transition: background-color 0.6s ease;
+}
+
+/* Glow effect behind the lamp when it's on */
+.lamp-glow {
+	/* Absolute positioning to place behind lamp */
+	position: absolute;
+	top: -20px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 200px;
+	height: 200px;
+	/* Radial gradient for glow effect */
+	background: radial-gradient(
+		circle,
+		rgba(255, 223, 128, 0.6) 0%,
+		transparent 70%
+	);
+	opacity: 0;
+	transition: opacity 0.6s ease;
+	/* Making sure it doesn't block clicks */
+	pointer-events: none;
+}
+
+/* Making the glow visible when lamp is active */
+.lamp-glow.active {
+	opacity: 1;
+}
+
+/* Styling the lamp pole/stand */
+.lamp-pole {
+	/* Setting background to light gray */
+	background-color: #d3d3d3;
+	/* Setting width */
+	width: 8px;
+	/* Setting height */
+	height: 120px;
+	/* Centering horizontally */
+	margin: 0 auto;
+}
+
+/* Styling the lamp base (bottom part) */
+.lamp-base {
+	background-color: #d3d3d3;
+	border-radius: 0 0 10px 10px;
+	width: 100px;
+	height: 15px;
+	margin: 0 auto;
+}
+
+/* Styling the pull string on the lamp */
+.lamp-string {
+	/* Absolute positioning */
+	position: absolute;
+	/* Positioning from top */
+	top: 75px;
+	/* Centering horizontally */
+	left: 50%;
+	/* Centering adjustment */
+	transform: translateX(-50%);
+	/* Setting string width */
+	width: 2px;
+	/* Setting string length */
+	height: 30px;
+	/* Setting string color to gray */
+	background-color: #888;
+}
+
+/* Styling the pull cord (circle at end of string) */
+.lamp-pull {
+	/* Absolute positioning */
+	position: absolute;
+	/* Positioning at bottom of string */
+	bottom: -10px;
+	/* Centering horizontally */
+	left: 50%;
+	/* Centering adjustment */
+	transform: translateX(-50%);
+	/* Setting size */
+	width: 15px;
+	height: 15px;
+	/* Making it circular */
+	border-radius: 50%;
+	/* Setting color to brown/tan */
+	background-color: #c4a57b;
+	/* Making it clickable */
+	cursor: pointer;
+	/* Smooth transition for hover effects */
+	transition: transform 0.2s ease;
+}
+
+/* Hover effect for the pull cord */
+.lamp-pull:hover {
+	transform: translateX(-50%) scale(1.2);
+}
+
+/* Styling the login form container */
+.login-form {
+	background-color: rgba(60, 60, 60, 0.8);
+	backdrop-filter: blur(10px);
+	padding: 40px;
+	border-radius: 15px;
+	width: 350px;
+	box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+	opacity: 0;
+	transition: all 0.6s ease;
+	transform: translateY(-20px);
+}
+
+/* Making form visible when active */
+.login-form.active {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Styling the "Welcome" heading */
+.login-form h2 {
+	color: #e0e0e0;
+	margin-bottom: 30px;
+	font-size: 1.8rem;
+	font-weight: 400;
+}
+
+/* Container for each input field */
+.input-group {
+	margin-bottom: 20px;
+	text-align: left;
+}
+
+/* Styling the labels for inputs */
+.input-group label {
+	display: block;
+	color: #b0b0b0;
+	margin-bottom: 8px;
+	font-size: 0.9rem;
+}
+
+/* Styling the input fields */
+.input-group input {
+	width: 100%;
+	padding: 12px;
+	background-color: rgba(50, 50, 50, 0.5);
+	border: none;
+	border: 1px solid rgba(200, 200, 200, 0.2);
+	border-radius: 8px;
+	color: #fff;
+	font-size: 1rem;
+	transition: border-color 0.3s ease;
+}
+
+/* Focus effect for input fields */
+.input-group input:focus {
+	outline: none;
+	border-color: #d4af37;
+}
+
+/* Styling for placeholder text */
+.input-group input::placeholder {
+	color: #888;
+}
+
+/* Styling the sign in button */
+.sign-in-btn {
+	width: 100%;
+	padding: 14px;
+	background: linear-gradient(135deg, #d4af37 0%, #f2d16b 100%);
+	border: none;
+	border-radius: 8px;
+	color: #2a2a2a;
+	font-size: 1.1rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition:
+		transform 0.2s ease,
+		box-shadow 0.2s ease;
+	margin-top: 10px;
+}
+
+/* Hover effect for sign in button */
+.sign-in-btn:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Active/click effect for button */
+.sign-in-btn:active {
+	transform: translateY(0);
+}
+
+/* Media query for responsive design on smaller screens */
+@media (max-width: 768px) {
+	/* Stacking elements vertically on mobile */
+	.content-wrapper {
+		flex-direction: column;
+		gap: 40px;
+	}
+
+	/* Reducing title size on mobile */
+	.title {
+		font-size: 2rem;
+	}
+
+	/* Reducing form width on mobile */
+	.login-form {
+		width: 90%;
+		max-width: 350px;
+	}
+}
