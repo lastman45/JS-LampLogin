@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamp Login</title>
+    <link rel="stylesheet" href="lamp-login.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Lamp-login</h1>
+        
+        <!-- Wrapper containing lamp and login form -->
+        <div class="content-wrapper">
+            <!-- Lamp illustration container -->
+            <div class="lamp-container">
+                <!-- Glow effect element -->
+                <div class="lamp-glow" id="lampGlow"></div>
+                <!-- Lamp shade (top part) -->
+                <div class="lamp-shade" id="lampShade"></div>
+                <!-- String hanging from lamp -->
+                <div class="lamp-string">
+                    <!-- Clickable pull cord -->
+                    <div class="lamp-pull" id="lampPull"></div>
+                </div>
+                <!-- Lamp pole/stand -->
+                <div class="lamp-pole"></div>
+                <!-- Lamp base (bottom part) -->
+                <div class="lamp-base"></div>
+            </div>
+            
+            <!-- Login form container -->
+            <div class="login-form" id="loginForm">
+                <h2>Welcome</h2>
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter username">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter password">
+                </div>
+                <button class="sign-in-btn">Sign In</button>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="lamp-login.js"></script>
+</body>
+</html>
